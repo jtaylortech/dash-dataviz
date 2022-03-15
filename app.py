@@ -4,7 +4,7 @@ import dash_html_components as html
 import pandas as pd
 
 data = pd.read_csv("avocado.csv")
-data = data.query("type == 'conventional' and region == 'Albany")
+data = data.query("type == 'conventional' and region == 'Albany'")
 data["Date"] = pd.to_datetime(data["Date"], format="%Y-%m-%d")
 data.sort_values("Date", inplace=True)
 
@@ -42,3 +42,6 @@ app.layout = html.Div(
         ),
     ]
 )
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
