@@ -1,2 +1,3 @@
 venv
-avocado.csv
+*.pyc
+.DS_Store
